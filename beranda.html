@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benara - Belajar Nabi dan Rasul</title>
+    <title>Benara - Belajar Nabi dan Rasul "beranda"</title>
     <link rel="stylesheet" href="syles2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -285,6 +285,30 @@ main {
 .moving-icon:nth-child(3) { top: 30%; left: 50%; }
 .moving-icon:nth-child(4) { top: 40%; left: 70%; }
 .moving-icon:nth-child(5) { top: 50%; left: 90%; }
+
+.start-learning-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1.5rem; /* Add some space above the button */
+}
+
+.start-learning-btn:hover {
+    background-color: #ff8c5a; /* Darker shade for hover effect */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.start-learning-btn:active {
+    transform: translateY(1px); /* Pressed effect */
+}
+
 </style>
 <body>
     <nav>
@@ -310,13 +334,14 @@ main {
         <div class="hero-image">
             <img src="fldr/2_20250112_143222_0001.svg" alt="Kids Reading">
         </div>
-        <div class="hero-content">
-            <h1>Belajar nabi<br>dan rasul</h1>
-            <p class="description">
-                BENARA ADALAH WEB YANG DIKEMBANGKAN UNTUK ANAK DAPAT BELAJAR KISAH NABI DAN RASUL SECARA DIGITAL,
-                INTERAKTIF, DAN KIDS FRIENDLY
-            </p>
-        </div>
+    <div class="hero-content">
+        <h1>Belajar nabi<br>dan rasul</h1>
+        <p class="description">
+            BENARA ADALAH WEB YANG DIKEMBANGKAN UNTUK ANAK DAPAT BELAJAR KISAH NABI DAN RASUL SECARA DIGITAL,
+            INTERAKTIF, DAN KIDS FRIENDLY
+        </p>
+        <a href="materi.html" class="start-learning-btn">Mulai Belajar</a> <!-- New Button -->
+    </div>
         <div class="icons-container">
             <img src="fldr/7_20250112_154541_0004.svg" class="moving-icon" alt="Icon 1">
             <img src="fldr/6_20250112_154541_0003.svg" class="moving-icon" alt="Icon 2">
@@ -325,25 +350,6 @@ main {
             <img src="fldr/3_20250112_154541_0000.svg" class="moving-icon" alt="Icon 5">
         </div>
     </section>
-
-        <section class="materi-grid" id="materi">
-            <div class="materi-card" data-title="Pengertian 1">
-                <img src="asset/harun-dakwah.webp" alt="Materi 1">
-                <h3>Pengertian</h3>
-            </div>
-            <div class="materi-card" data-title="Pengertian 2">
-                <img src="asset/nuh gunung.jpg" alt="Materi 2">
-                <h3>nama-nama nabi</h3>
-            </div>
-            <div class="materi-card" data-title="Pengertian 3">
-                <img src="asset/sembuh.jpg" alt="Materi 3">
-                <h3>sifat-sifat nabi</h3>
-            </div>
-            <div class="materi-card" data-title="Pengertian 4">
-                <img src="asset/laut.jpg" alt="Materi 4">
-                <h3>ulul azmi</h3>
-            </div>
-        </section>
     </main>
 
     <script src="script.js"></script>
