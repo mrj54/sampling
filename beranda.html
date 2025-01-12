@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benara - Belajar Nabi dan Rasul</title>
+    <link rel="stylesheet" href="syles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2B4F60;
+    --accent-color: #FFA07A;
+    --text-color: #333;
+    --background-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-brand span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+    color: var(--primary-color);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#searchInput {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 200px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#searchBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 600px;
+    letter-spacing: 0.5px;
+}
+
+.materi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.materi-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.materi-card:hover {
+    transform: translateY(-5px);
+}
+
+.materi-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.materi-card h3 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-items {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-items.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+}
+
+.hero {
+    position: relative; /* Set hero as relative for absolute positioning of icons */
+    overflow: hidden; /* Prevent icons from overflowing */
+}
+
+.icons-container {
+    position: absolute;
+    top: 0; /* Start from the top */
+    left: 0; /* Start from the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    pointer-events: none; /* Prevents interaction with icons */
+}
+
+.moving-icon {
+    width: 50px; /* Set the size of the icons */
+    height: auto;
+    position: absolute;
+    animation: move 10s linear infinite; /* Animation for moving icons */
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0); /* Start position */
+    }
+    25% {
+        transform: translate(-10px, -30px); /* Move up and left */
+    }
+    50% {
+        transform: translate(10px, -20px); /* Move up and right */
+    }
+    75% {
+        transform: translate(-10px, -30px); /* Move back down and left */
+    }
+    100% {
+        transform: translate(0, 0); /* Back to start */
+    }
+}
+
+/* Positioning each icon differently */
+.moving-icon:nth-child(1) { top: 10%; left: 10%; }
+.moving-icon:nth-child(2) { top: 20%; left: 30%; }
+.moving-icon:nth-child(3) { top: 30%; left: 50%; }
+.moving-icon:nth-child(4) { top: 40%; left: 70%; }
+.moving-icon:nth-child(5) { top: 50%; left: 90%; }
+</style>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="fldr/1_20250112_143222_0000.svg" alt="Benara Logo" class="logo">
+            <span>Benara.</span>
+        </div>
+        <div class="nav-items">
+            <a href="#materi">Materi</a>
+            <a href="#kontak">Kontak</a>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari materi...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+    <section class="hero">
+        <div class="hero-image">
+            <img src="fldr/2_20250112_143222_0001.svg" alt="Kids Reading">
+        </div>
+        <div class="hero-content">
+            <h1>Belajar nabi<br>dan rasul</h1>
+            <p class="description">
+                BENARA ADALAH WEB YANG DIKEMBANGKAN UNTUK ANAK DAPAT BELAJAR KISAH NABI DAN RASUL SECARA DIGITAL,
+                INTERAKTIF, DAN KIDS FRIENDLY
+            </p>
+        </div>
+        <div class="icons-container">
+            <img src="fldr/7_20250112_154541_0004.svg" class="moving-icon" alt="Icon 1">
+            <img src="fldr/6_20250112_154541_0003.svg" class="moving-icon" alt="Icon 2">
+            <img src="fldr/5_20250112_154541_0002.svg" class="moving-icon" alt="Icon 3">
+            <img src="fldr/4_20250112_154541_0001.svg" class="moving-icon" alt="Icon 4">
+            <img src="fldr/3_20250112_154541_0000.svg" class="moving-icon" alt="Icon 5">
+        </div>
+    </section>
+
+        <section class="materi-grid" id="materi">
+            <div class="materi-card" data-title="Pengertian 1">
+                <img src="asset/harun-dakwah.webp" alt="Materi 1">
+                <h3>Pengertian</h3>
+            </div>
+            <div class="materi-card" data-title="Pengertian 2">
+                <img src="asset/nuh gunung.jpg" alt="Materi 2">
+                <h3>nama-nama nabi</h3>
+            </div>
+            <div class="materi-card" data-title="Pengertian 3">
+                <img src="asset/sembuh.jpg" alt="Materi 3">
+                <h3>sifat-sifat nabi</h3>
+            </div>
+            <div class="materi-card" data-title="Pengertian 4">
+                <img src="asset/laut.jpg" alt="Materi 4">
+                <h3>ulul azmi</h3>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Toggle mobile menu
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navItems = document.querySelector('.nav-items');
+
+            menuToggle.addEventListener('click', () => {
+                navItems.classList.toggle('active');
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const materiCards = document.querySelectorAll('.materi-card');
+
+            function searchMateri() {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                materiCards.forEach(card => {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            searchBtn.addEventListener('click', searchMateri);
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    searchMateri();
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navItems.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navItems.classList.remove('active');
+                }
+            });
+    </script>
+</body>
+
+</html>
