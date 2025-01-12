@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benara - Belajar Nabi dan Rasul</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #4a90e2;
+            --pink-card: #FFF0F5;
+            --purple-card: #E8E6FA;
+            --yellow-card: #FFF8DC;
+            --blue-card: #E6F3F7;
+            --coral-card: #FFE4E1;
+            --mint-card: #F0FFF0;
+            --button-color: #FF9999;
+            --title-bg: #FF9999;
+        }
+
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            color: var(--primary-color);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 2rem;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 6rem auto 0;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .student-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .student-img {
+            width: 160px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: -20px;
+            right: -30px;
+            font-size: 24px;
+            color: #98FB98;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-pink {
+            background-color: var(--pink-card);
+        }
+
+        .card-purple {
+            background-color: var(--purple-card);
+        }
+
+        .card-yellow {
+            background-color: var(--yellow-card);
+        }
+
+        .card-blue {
+            background-color: var(--blue-card);
+        }
+
+        .card-coral {
+            background-color: var(--coral-card);
+        }
+
+        .card-mint {
+            background-color: var(--mint-card);
+        }
+
+        .card-title {
+            color: white;
+            background-color: var(--title-bg);
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .read-btn {
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .read-btn:hover {
+            background-color: #FF8080;
+            transform: scale(1.05);
+        }
+
+        .student-character-container {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .student-character {
+            width: 120px;
+            animation: float 3s ease-in-out infinite;
+            margin-right: 2rem;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(0.9);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .main-content {
+                padding: 0 1rem;
+                margin-top: 5rem;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .student-section {
+                margin-bottom: 2rem;
+            }
+
+            .student-img {
+                width: 140px;
+            }
+
+            .student-character-container {
+                height: 120px;
+            }
+
+            .student-character {
+                width: 100px;
+                margin-right: 1rem;
+            }
+
+            .profile-img {
+                margin-left: 1rem;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .logo-text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar animate_animated animate_fadeIn">
+        <div class="logo-container">
+            <img src="fldr/1_20250112_143222_0000.svg" alt="Owl Logo" class="logo-img">
+            <span class="logo-text">Benara.</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Kontak</a>
+            <img src="fldr/profile.png" alt="Profile" class="profile-img">
+        </div>
+        <div class="menu-icon">☰</div>
+    </nav>
+
+    <main class="main-content">
+        <div class="student-section animate_animated animate_fadeInUp">
+            <img src="fldr/2_20250113_011417_0000.svg" alt="Student" class="student-img">
+            <div class="decorative-elements">✨ ⭐ 🌟</div>
+        </div>
+
+        <div class="cards-container">
+            <div class="card card-pink animate_animated animate_fadeIn">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/balqis 1.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+            <div class="card card-purple animate_animated animate_fadeIn" style="animation-delay: 0.1s;">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/bayi sengketa.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+            <div class="card card-yellow animate_animated animate_fadeIn" style="animation-delay: 0.2s;">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/air batu.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+            <div class="card card-blue animate_animated animate_fadeIn" style="animation-delay: 0.3s;">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/ayyub-.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+            <div class="card card-coral animate_animated animate_fadeIn" style="animation-delay: 0.4s;">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/burung hud hud.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+            <div class="card card-mint animate_animated animate_fadeIn" style="animation-delay: 0.5s;">
+                <div class="card-title">Pengertian nabi dan rasul</div>
+                <img src="asset/ayub tamat.jpg" alt="Prophet" class="card-img">
+                <button class="read-btn">Baca</button>
+            </div>
+        </div>
+
+        <div class="student-character-container">
+            <img src="fldr/3_20250113_011417_0001.svg" alt="Student Character"
+                class="student-character animate_animated animate_fadeIn">
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.read-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('animate_animated', 'animate_pulse');
+                setTimeout(() => {
+                    button.classList.remove('animate_animated', 'animate_pulse');
+                    alert('Membuka halaman baca...');
+                }, 300);
+            });
+        });
+
+        document.querySelector('.menu-icon').addEventListener('click', () => {
+            alert('Menu mobile clicked');
+        });
+
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+
+</html>
