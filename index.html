@@ -13,6 +13,28 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .mascot {
+            position: absolute;
+            width: 120px;
+            height: auto;
+            top: -40px;
+            left: -20px;
+            z-index: 2;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
         body {
             min-height: 100vh;
             display: flex;
@@ -57,15 +79,6 @@
             padding-left: 2rem;
         }
 
-        .mascot {
-            position: absolute;
-            width: 120px;
-            height: auto;
-            top: -40px;
-            left: -20px;
-            z-index: 2;
-        }
-
         .illustration {
             width: 100%;
             max-width: 400px;
@@ -79,11 +92,9 @@
             margin-bottom: 2rem;
             font-weight: bold;
             text-align: left;
-
         }
 
         .form-group {
-
             width: 100%;
         }
 
@@ -142,6 +153,7 @@
                 top: -50px;
                 left: 50%;
                 transform: translateX(-50%);
+                animation: bounce 2s ease-in-out infinite;
             }
 
             .left-section,
