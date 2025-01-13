@@ -17,11 +17,23 @@
 
             0%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0) translateX(0);
             }
 
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-20px) translateX(0);
+            }
+        }
+
+        @keyframes bounceCenter {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            50% {
+                transform: translateY(-20px) translateX(-50%);
             }
         }
 
@@ -87,7 +99,7 @@
         }
 
         h1 {
-            color: #3d24af;
+            color: #3664a0;
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-weight: bold;
@@ -152,8 +164,7 @@
                 width: 100px;
                 top: -50px;
                 left: 50%;
-                transform: translateX(-50%);
-                animation: bounce 2s ease-in-out infinite;
+                animation: bounceCenter 2s ease-in-out infinite;
             }
 
             .left-section,
