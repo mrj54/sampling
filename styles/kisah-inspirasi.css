@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.floating-animation {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.gradient-bg {
+    background: linear-gradient(120deg, #e0f2fe, #dbeafe, #e0e7ff);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.screen-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.story-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.story-container::-webkit-scrollbar-thumb {
+    background-color: rgba(59, 130, 246, 0.5);
+    border-radius: 20px;
+}
+
+/* Media queries untuk perangkat mobile yang lebih besar */
+@media (min-width: 390px) and (max-width: 767px) {
+    .mobile-card-image {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .mobile-card-title {
+        font-size: 1rem !important;
+    }
+    
+    .mobile-card-desc {
+        font-size: 0.875rem !important;
+    }
+
+    .mobile-logo {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .mobile-header {
+        font-size: 1.75rem !important;
+    }
+
+    .mobile-subheader {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Media queries untuk tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .mobile-card-image {
+        width: 140px !important;
+        height: 140px !important;
+    }
+}

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sifat Rasulullah - Interactive Learning</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --wajib: #10b981;
+            --wajib-light: #34d399;
+            --mustahil: #ef4444;
+            --mustahil-light: #f87171;
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+       
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --wajib: #10b981;
+            --wajib-light: #34d399;
+            --mustahil: #ef4444;
+            --mustahil-light: #f87171;
+            --success: #22c55e;
+            --warning: #eab308;
+            --info: #3b82f6;
+            --bg-main: rgb(248, 250, 252);
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #e0f2fe, #f0f9ff);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .main-title {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 25px 50px;
+            border-radius: 30px;
+            font-size: 36px;
+            font-weight: 800;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-area {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .category-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .category-title {
+            font-size: 32px;
+            font-weight: 800;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wajib .category-title {
+            background: linear-gradient(135deg, var(--wajib), var(--wajib-light));
+        }
+
+        .mustahil .category-title {
+            background: linear-gradient(135deg, var(--mustahil), var(--mustahil-light));
+        }
+
+        .characteristic-item {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 25px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .characteristic-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .characteristic-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .characteristic-description {
+            font-size: 16px;
+            color: #64748b;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1200px) {
+            .content-area {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 28px;
+                padding: 20px 35px;
+            }
+
+            .category-title {
+                font-size: 24px;
+            }
+
+            .characteristic-title {
+                font-size: 20px;
+            }
+
+            .characteristic-description {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-container {
+                padding: 10px;
+            }
+
+            .main-title {
+                font-size: 24px;
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="main-title">Sifat Rasulullah ﷺ</h1>
+        </header>
+
+        <main class="content-area">
+            <section class="category-section wajib">
+                <div class="category-container">
+                    <h2 class="category-title">Sifat Wajib</h2>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Shiddiq (الصِّدْقُ)</h3>
+                        <p class="characteristic-description">Benar dan jujur dalam setiap perkataan dan perbuatan</p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Amanah (الأَمَانَةُ)</h3>
+                        <p class="characteristic-description">Dapat dipercaya dalam menjalankan tugas dan tanggung jawab
+                        </p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Tabligh (التَّبْلِيغُ)</h3>
+                        <p class="characteristic-description">Menyampaikan seluruh wahyu Allah kepada umat manusia</p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Fathanah (الفَطَانَةُ)</h3>
+                        <p class="characteristic-description">Cerdas dan bijaksana dalam menghadapi setiap persoalan</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-section mustahil">
+                <div class="category-container">
+                    <h2 class="category-title">Sifat Mustahil</h2>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Kidzib (الكِذْبُ)</h3>
+                        <p class="characteristic-description">Dusta dalam perkataan dan perbuatan</p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Khianat (الخِيَانَةُ)</h3>
+                        <p class="characteristic-description">Berkhianat terhadap amanah yang diberikan</p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Kitman (الكِتْمَانُ)</h3>
+                        <p class="characteristic-description">Menyembunyikan wahyu Allah</p>
+                    </div>
+                    <div class="characteristic-item">
+                        <h3 class="characteristic-title">Baladah (البَلَادَةُ)</h3>
+                        <p class="characteristic-description">Bodoh dan tidak memiliki kecerdasan</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.characteristic-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-10px)';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Kids Academy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary-color: #5b8585;
+            --bg-light: #f5f8ff;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239ab6df' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(91, 133, 133, 0.1);
+            z-index: 0;
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(114, 159, 177, 0.1);
+            z-index: 0;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 50;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            transform: rotate(10deg);
+        }
+
+        .logo span {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* User greeting styles */
+        .user-greeting {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 50;
+        }
+
+        .greeting-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5b8585, #729fb1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(91, 133, 133, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(91, 133, 133, 0.4);
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+            border-radius: 10px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .academy-button {
+            background: linear-gradient(to right, #5b8585, #729fb1);
+            padding: 10px 18px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(91, 133, 133, 0.3);
+        }
+
+        .academy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(91, 133, 133, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 50;
+        }
+
+        /* Hero section */
+        .hero {
+            margin-bottom: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: #e8fae8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 20px rgba(114, 159, 177, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #5b8585, #80b8a3);
+            bottom: -10px;
+            left: 0;
+            border-radius: 10px;
+        }
+
+        .hero p {
+            color: #555;
+            max-width: 500px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        /* Course grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card {
+            border-radius: 24px;
+            padding: 24px;
+            cursor: pointer;
+            transition: var(--transition);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-wrapper {
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            height: 180px;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .course-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            margin-top: auto;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .course-card h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            bottom: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+
+        .bg-green {
+            background: linear-gradient(135deg, #729fb1, #5bc8ac);
+        }
+
+        .bg-purple {
+            background: linear-gradient(135deg, #5b8585, #7a7ab8);
+        }
+
+        .bg-mint {
+            background: linear-gradient(135deg, #658ace, #50b4c8);
+        }
+
+        .bg-yellow {
+            background: linear-gradient(135deg, #699bab, #c8b350);
+        }
+
+        .bg-blue {
+            background: linear-gradient(135deg, #80b8a3, #5086c8);
+        }
+
+        .bg-gold {
+            background: linear-gradient(135deg, #9c94e0, #d096e0);
+        }
+
+        /* Fun Elements for Kids */
+        .course-card::before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-size: 20px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .course-card:hover::before {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        .course-card:nth-child(2n)::before {
+            content: "🌟";
+        }
+
+        .course-card:nth-child(3n)::before {
+            content: "🎯";
+        }
+
+        /* New Button Styles */
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .learn-button {
+            background-color: rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            display: inline-block;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .learn-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile styles */
+        @media (max-width: 992px) {
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .icon-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-wrapper {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .logo span {
+                font-size: 22px;
+            }
+
+            .logo img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .greeting-text {
+                font-size: 14px;
+            }
+
+            .user-avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+
+            .hero-title {
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .course-card {
+                padding: 16px;
+            }
+
+            .course-card h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="png/1_20250113_150103_0000.png" alt="Benara Logo">
+                <span>Benara.</span>
+            </div>
+            <div class="user-greeting">
+                <div class="greeting-text">Halo, User</div>
+                <div class="user-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero">
+                <div class="hero-title">
+                    <div class="icon-circle">✨</div>
+                    <h1>Belajar<br>Nabi dan Rasul</h1>
+                </div>
+                <p>
+                    Pelajari tentang kehidupan, sifat, dan kisah inspiratif para nabi yang dapat menjadi teladan dalam
+                    kehidupan kita sehari-hari.
+                </p>
+            </div>
+
+            <div class="courses-grid">
+                <div class="course-card bg-green">
+                    <div class="image-wrapper">
+                        <img src="asset/harun-dakwah.webp" alt="Pengertian Nabi dan Rasul">
+                    </div>
+                    <div class="title-container">
+                        <h3>Pengertian Nabi & Rasul</h3>
+                        <a href="../materihtml/isa.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+                <div class="course-card bg-blue">
+                    <div class="image-wrapper">
+                        <img src="asset/harun-3.jpg" alt="Nama-nama Nabi dan Rasul">
+                    </div>
+                    <div class="title-container">
+                        <h3>Nama Nama Nabi & Rasul</h3>
+                        <a href="./beranda/nama-nama-nabi.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+                <div class="course-card bg-gold">
+                    <div class="image-wrapper">
+                        <img src="asset/harun-2.jpg" alt="Sifat-sifat Nabi dan Rasul">
+                    </div>
+                    <div class="title-container">
+                        <h3>Sifat Sifat Nabi & Rasul</h3>
+                        <a href="sifat.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card bg-yellow">
+                    <div class="image-wrapper">
+                        <img src="asset/nuh gunung.jpg" alt="Kisah Rasul Ulul Azmi">
+                    </div>
+                    <div class="title-container">
+                        <h3>Kisah Rasul Ulul Azmi</h3>
+                        <a href="./beranda/ulul-azmi.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+                <div class="course-card bg-purple">
+                    <div class="image-wrapper">
+                        <img src="asset/hatun.jpg" alt="Kisah Inspirasi Nabi">
+                    </div>
+                    <div class="title-container">
+                        <h3>Kisah Inspirasi Nabi</h3>
+                        <a href="./beranda/kisah-inspirasi.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+                <div class="course-card bg-mint">
+                    <div class="image-wrapper">
+                        <img src="asset/output (2).jpg" alt="Ayo Berlatih">
+                    </div>
+                    <div class="title-container">
+                        <h3>Ayo Berlatih!!!</h3>
+                        <a href="./evalhtml/quiz.html" class="learn-button">Ayo Belajar!</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

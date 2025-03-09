@@ -1,0 +1,24 @@
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #3b82f6;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    font-weight: 600;
+}
+
+.nav-btn:hover {
+    color: #1d4ed8;
+    background: #eff6ff;
+    transform: translateY(-2px);
+}
+
+.nav-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}

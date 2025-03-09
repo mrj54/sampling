@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Prophet Names App</title>
+    <link rel="stylesheet" href="../styles/nama-nama-nabi.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="card header">
+            <div class="header-content">
+                <div class="search-container">
+                    <span class="brand"></span>
+                    <input type="text" placeholder="cari nama nabi..." class="search-input">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </div>
+                <div class="user-info">
+                    <h1 style="font-size: 1.5rem; color: #3b82f6;">Hello Friend!</h1>
+                    <img src="../logo/benara (1) (1).png" alt="Kid Avatar" class="avatar"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="prophets-grid" id="prophetsGrid"></div>
+        <div class="bubble-chat" id="bubbleChat">
+            <p id="bubbleContent"></p>
+        </div>
+
+
+        <div class="nav-bar">
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="navigateHome()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Home
+                </button>
+                 <button class="nav-btn" onclick="navigateProfile()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Profile
+                </button>
+            </a>
+            </div>
+        </div>
+    </div>
+<script src="../scripts/nama-nama-nabi.js"></script>
+<body>
+    
+<html>

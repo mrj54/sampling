@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Datang di benara</title>
+    <title>Selamat Datang di Benara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         @keyframes bounce {
@@ -52,7 +57,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: white;
+            background-color: #f9f7fe;
             padding: 1rem;
         }
 
@@ -67,13 +72,14 @@
         }
 
         .container {
-            background: #aadddd;
+            background: linear-gradient(135deg, #c6f0f5 0%, #a8d8ef 100%);
             border-radius: 32px;
             width: 90%;
             height: 85%;
             position: relative;
             display: flex;
             padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .left-section {
@@ -99,11 +105,13 @@
         }
 
         h1 {
-            color: #3664a0;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: bold;
+            color: #5b3db4;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
             text-align: left;
+            font-family: 'Quicksand', sans-serif;
+            letter-spacing: -0.5px;
         }
 
         .form-group {
@@ -112,51 +120,57 @@
 
         .form-control {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1.2rem;
             border: none;
             border-radius: 24px;
-            font-size: 1rem;
-            background: #fff;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            background: #ffffff;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
             outline: none;
-            box-shadow: 0 0 0 2px #4a9e9e;
+            box-shadow: 0 4px 15px rgba(121, 70, 204, 0.2);
+            transform: translateY(-2px);
         }
 
         .btn {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.85rem;
             background: #7946cc;
-            color: rgb(245, 239, 239);
+            color: white;
             border: none;
             border-radius: 24px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             margin-top: 1rem;
-            font-weight: bold;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(121, 70, 204, 0.3);
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
             background: #ff8a52;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 138, 82, 0.4);
         }
 
         .subtitle {
-            text-align: center;
-            color: #277f97;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            line-height: 1.4;
-            font-weight: bold;
+            color: #1a6e85;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 600;
         }
 
         /* Mobile styles */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
-                padding: 1rem;
+                padding: 1.5rem;
                 height: auto;
             }
 
@@ -177,13 +191,17 @@
             }
 
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 text-align: center;
                 margin-bottom: 1rem;
             }
 
             .right-section {
                 padding-left: 0;
+            }
+
+            .subtitle {
+                text-align: center;
             }
         }
     </style>
@@ -197,19 +215,19 @@
                 <img src="png/2_20250113_150103_0001.png" alt="Students studying" class="illustration">
             </div>
             <div class="right-section">
-                <h1>Selamat datang</h1>
+                <h1>Selamat Datang!</h1>
                 <p class="subtitle">
                     Benara adalah website yang dirancang khusus untuk belajar kisah nabi dan rasul untuk anak.
                     Web ini berkarakter kids friendly.
                 </p>
                 <form id="loginForm" onsubmit="return handleSubmit(event)">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nama" id="nama" required />
+                        <input type="text" class="form-control" placeholder="Nama Kamu" id="nama" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sekolah" id="sekolah" required />
+                        <input type="text" class="form-control" placeholder="Nama Sekolah" id="sekolah" required />
                     </div>
-                    <button type="submit" class="btn">Masuk</button>
+                    <button type="submit" class="btn">Mulai Petualangan</button>
                 </form>
             </div>
         </div>

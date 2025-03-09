@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Inspirasi</title>
+    <link rel="stylesheet" href="../inspirasistyles/musa.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add custom container width for desktop */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1024px !important;
+            }
+
+            .story-cards-container {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .story-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .story-card img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        /* Preserve mobile styles */
+        @media (max-width: 767px) {
+            .story-cards-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center">
+                <img src="../logo/benara (1) (1).png " alt="Logo" class="h-10 w-10 mr-2">
+                <h1 class="text-2xl font-bold" style="color: #794cb5;">BENARA</h1>
+            </div>
+            <button id="themeToggle" class="theme-toggle">
+                🌙
+            </button>
+        </header>
+
+        <!-- Title Section -->
+        <div class="title-gradient">
+            <h2 class="text-white text-center font-bold">KISAH INSPIRASI ANAK</h2>
+        </div>
+
+        <!-- Story Cards Container -->
+        <div class="story-cards-container">
+            <!-- Nabi Musa Card -->
+            <div class="story-card">
+                <img src="../inspirasiimg/musa inspir.png" alt="Nabi Musa">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-4">Kisah Nabi Musa</h3>
+                    <div class="chapter-buttons-container">
+                        <div class="relative">
+                            <button class="chapter-btn" data-story="musa" data-chapter="1">Chapter 1</button>
+                            <div class="bubble-chat" id="musa-1-bubble">
+                                Nabi Musa dilahirkan di masa yang sulit, tetapi Allah melindunginya dengan cara yang
+                                ajaib!
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <button class="chapter-btn" data-story="musa" data-chapter="2">Chapter 2</button>
+                            <div class="bubble-chat" id="musa-2-bubble">
+                                Perjalanan Nabi Musa ke Madyan penuh dengan keberanian dan pertolongan Allah!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nabi Isa Card -->
+            <div class="story-card">
+                <img src="../inspirasiimg/musa.inspire.jpg" alt="Nabi Isa">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-4">Kisah Nabi Isa</h3>
+                    <div class="chapter-buttons-container">
+                        <div class="relative">
+                            <button class="chapter-btn" data-story="isa" data-chapter="1">Chapter 1</button>
+                            <div class="bubble-chat" id="isa-1-bubble">
+                                Nabi Isa memiliki kekuatan luar biasa dari Allah untuk menolong orang-orang di
+                                sekitarnya!
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <button class="chapter-btn" data-story="isa" data-chapter="2">Chapter 2</button>
+                            <div class="bubble-chat" id="isa-2-bubble">
+                                Mukjizat Nabi Isa menunjukkan betapa kuasa Allah itu besar!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <button class="mobile-nav-btn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span>Home</span>
+            </button>
+            <button class="mobile-nav-btn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span>Profile</span>
+            </button>
+        </nav>
+    </div>
+    <script src="../inspirasiscript/musa.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan 25 Nabi dan Rasul</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/leaderbord.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    </head>
+    
+    <body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen p-2 sm:p-4">
+        <!-- Username Modal -->
+        <div id="usernameModal" class="fixed inset-0 popup-overlay flex items-center justify-center z-50 hidden">
+            <div class="modal-content bg-white rounded-xl p-4 sm:p-8 shadow-2xl w-[90%] sm:max-w-md mx-auto">
+                <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">Masukkan Nama Kamu</h2>
+                <input type="text" id="usernameInput"
+                    class="username-input w-full px-3 py-2 sm:px-4 sm:py-3 rounded-xl border-2 border-purple-300 focus:border-purple-500 outline-none mb-4"
+                    placeholder="Nama Pemain">
+                <button onclick="startGameWithUsername()"
+                    class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-4 rounded-xl transition-all duration-200">
+                    Mulai Bermain
+                </button>
+            </div>
+        </div>
+    
+        <!-- Leaderboard Button -->
+        <button onclick="toggleLeaderboard()"
+            class="fixed top-2 right-2 sm:top-4 sm:right-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-bold py-2 px-3 sm:px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-40 text-sm sm:text-base">
+            🏆 Leaderboard
+        </button>
+    
+        <!-- Leaderboard Modal -->
+        <div id="leaderboardModal" class="fixed inset-0 popup-overlay flex items-center justify-center z-50 hidden">
+            <div class="modal-content bg-white rounded-xl p-4 sm:p-8 shadow-2xl w-[95%] sm:max-w-2xl mx-auto">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-purple-600">Top Pemain</h2>
+                    <button onclick="toggleLeaderboard()" class="text-gray-500 hover:text-gray-700 p-2">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+    
+                <div class="space-y-2 sm:space-y-4" id="leaderboardList">
+                    <!-- Leaderboard items will be inserted here -->
+                </div>
+            </div>
+        </div>
+    
+        <!-- Main Game Content -->
+        <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+            <!-- Add your existing game content here with similar responsive classes -->
+        </div>
+        <script src="../scripts/leaderbord.js"></script>

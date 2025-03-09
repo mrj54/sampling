@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Prophets Learning Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/flipcard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body class="bg-gradient-to-br from-yellow-100 via-orange-100 to-pink-100 min-h-screen flex flex-col">
+
+    <div class="max-w-md mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col flex-grow">
+        <!-- Header -->
+        <div class="p-6 bg-white">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-2">
+                    <div class="text-2xl font-bold text-purple-500 float-animation">Benara</div>
+                    <div class="bg-yellow-100 rounded-full px-3 py-1">
+                        <span class="text-orange-500 font-bold">Score: </span>
+                        <span id="score" class="text-orange-500 font-bold">0</span>
+                    </div>
+                </div>
+                <div id="levelIndicator" class="flex items-center bg-yellow-100 rounded-full px-4 py-2">
+                    <span class="text-orange-500 font-bold">Level: 1</span>
+                </div>
+            </div>
+
+            <!-- Game modes -->
+            <div class="flex space-x-2 mb-4">
+                <button id="learningMode" class="px-4 py-2 bg-orange-400 text-white rounded-full text-sm font-bold shadow-md hover:bg-orange-500 transition-colors">
+                    Learning Mode
+                </button>
+                <button id="gameMode" class="px-4 py-2 bg-blue-400 text-white rounded-full text-sm font-bold shadow-md hover:bg-blue-500 transition-colors">
+                    Memory Game
+                </button>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div id="mainContent" class="p-6 bg-yellow-50 flex-grow">
+            <!-- Learning Mode Content -->
+            <div id="learningContent" class="grid grid-cols-2 gap-3"></div>
+
+            <!-- Game Mode Content -->
+            <div id="gameContent" class="hidden">
+                <div class="text-center mb-4">
+                    <h2 class="text-xl font-bold text-orange-500 mb-2">Prophet Memory Game</h2>
+                    <p class="text-gray-600">Match the prophets with their stories!</p>
+                </div>
+                <div id="gameGrid" class="grid grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+
+        <!-- Sticky Footer -->
+        <div class="flex justify-around items-center p-4 bg-white border-t border-gray-100">
+            <button id="homeBtn" class="flex flex-col items-center p-2 text-orange-400 hover:text-orange-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span class="text-xs">Home</span>
+            </button>
+            <button id="achievementsBtn" class="flex flex-col items-center p-2 text-orange-400 hover:text-orange-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+                <span class="text-xs">Rewards</span>
+            </button>
+        </div>
+    </div>
+    <script src="../scripts/flipcard.js"></script>
+    <body>
+        <html>
